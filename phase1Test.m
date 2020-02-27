@@ -17,10 +17,10 @@ automatically
 %}
 
 %set limits limits = [t1_x_min t1_x_max t2_x_min t2_x_max]
-limits = [-0.1 0.1 -0.1 0.1];
+limits = [-1.35 -1.2 -0.1 -0.3];
 axis = 'x';                     % change trims in the horizontal direction and fit horizontal centroid
 npts = 5;                       % number of points along t1,t2 axis, total points = npts^2
-quad_strength = 0.1;            % quad strength when the quad will be in the "on" state 
+quad_strength = 0.2;            % quad strength when the quad will be in the "on" state 
 
 %run scan for Q1 off
 data_off = scan_trims(limits,'2d',npts,axis);

@@ -14,3 +14,4 @@ function [data] = get_data()
     data = [datamag datacc(2) datacc(3)]
     close(conn)
 end
+

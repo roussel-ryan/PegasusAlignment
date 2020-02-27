@@ -23,7 +23,7 @@ function [centroid_data] = scan_trims(limits,mode,npts,axis)
 
             %prepare scan points for do_scan function
             %matrix should be of form [[t1_x t1_y t2_x t2_y],...]
-            test_points = zeros(4,len(trim_values));
+            test_points = zeros(4,length(trim_values));
             test_points(1 + axis_add,:) = trim_values;
         end
 
@@ -36,7 +36,7 @@ function [centroid_data] = scan_trims(limits,mode,npts,axis)
 
             %prepare scan points for do_scan function
             %matrix should be of form [[t1_x t1_y t2_x t2_y],...]
-            test_points = zeros(4,len(trim_values));
+            test_points = zeros(4,length(trim_values));
             test_points(3 + axis_add,:) = trim_values;
         end
 
@@ -48,9 +48,13 @@ function [centroid_data] = scan_trims(limits,mode,npts,axis)
             t2_values = linspace(limits(3),limits(4),npts);
 
             [X,Y] = meshgrid(t1_values,t2_values);
-            test_points = zeros(4,len(X(:).'));
+            test_points = zeros(4,length(X(:).'));
             test_points(1 + axis_add,:) = X(:).';
             test_points(3 + axis_add,:) = Y(:).';
+            test_points(2,:) = -0.1;
+            test_points(4,:) = -0.1;
+            
+            % need to set other axis to current values
         end
     elseif strcmp(mode,'2d_bayes')
         %search space using gp regression
