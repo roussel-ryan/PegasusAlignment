@@ -24,6 +24,8 @@ quad_strength = 0.2;            % quad strength when the quad will be in the "on
 
 %run scan for Q1 off
 data_off = scan_trims(limits,'2d',npts,axis);
+data_off = data_off(find(data_off(:,5) > 0),:); 
+
 
 %fit data
 fit_off = fit_plane_to_data(data_off,axis);
@@ -33,6 +35,7 @@ set_quads(quad_strength,0)
 
 %repeat scan and fit
 data_on = scan_trims(limits,'2d',5,axis);
+data_on = data_on(find(data_on(:,5) > 0),:); 
 fit_on = fit_plane_to_data(data_on,axis);
 
 
