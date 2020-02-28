@@ -28,6 +28,15 @@ on_fit = fit_on(1) + fit_on(2)*xx + fit_on(3)*yy;
 s_off = surf(xx,yy,off_fit);
 s_on = surf(xx,yy,on_fit);
 
+A = fit_on(1) - fit_off(1);
+B = fit_on(2) - fit_off(2);
+C = fit_on(3) - fit_off(3);
+
+intersect_fit = [-A/B -C/B];
+temp = [y*0+1; y];
+t_1_intersect = intersect_fit*temp;
+plot3(t_1_intersect,y,fit_off(1) + fit_off(2)*t_1_intersect + fit_off(3)*y,'black')
+
 set(s_off,'FaceColor',[1 0 0],'FaceAlpha',0.5,'EdgeColor','none')
 set(s_on,'FaceColor',[0 1 0],'FaceAlpha',0.5,'EdgeColor','none')
 
