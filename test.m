@@ -12,4 +12,4 @@ plot3(tt1(:),tt2(:),cen,'.')
 one_col = ones(1,length(cen)).';
 test_data = [tt1(:) one_col tt2(:) one_col cen one_col];
 
-[fit,MSE] = fit_plane_to_data(test_data,'x')
+[fit,MSE] = phase1_fit(test_data,'x')

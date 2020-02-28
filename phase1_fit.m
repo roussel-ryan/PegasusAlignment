@@ -1,4 +1,4 @@
-function [fit,MSE] = fit_plane_to_data(collected_data,axis)
+function [fit,MSE] = phase1_fit(collected_data,axis)
 %FIT_PLANE_TO_DATA Get plane parameters that fit to the data collected 
 %   collected_data in the form of [t1_x t1_y t2_x t2_y centroid_x centroid_y]
 %   parameters are fit to the equation z = fit[1] + fit[2]*t1_axis +

@@ -10,8 +10,8 @@ data_on = data.data_on;
 data_off = data_off(find(data_off(:,5) > 0),:); 
 data_on = data_on(find(data_on(:,5) > 0),:); 
 
-[fit_off, MSE_off] = fit_plane_to_data(data_off,'x');
-[fit_on, MSE_on] = fit_plane_to_data(data_on,'x');
+[fit_off, MSE_off] = phase1_fit(data_off,'x');
+[fit_on, MSE_on] = phase1_fit(data_on,'x');
 
 hold on
 % plot raw data

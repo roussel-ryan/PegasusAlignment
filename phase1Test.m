@@ -26,7 +26,7 @@ quad_strength = 0.2;            % quad strength when the quad will be in the "on
 data_off = scan_trims(limits,'2d',npts,axis);
 
 %fit data
-fit_off = fit_plane_to_data(data_off,axis);
+fit_off = phase1_fit(data_off,axis);
 
 %turn on quadrupole
 set_quads(quad_strength,0)
@@ -34,7 +34,7 @@ set_quads(quad_strength,0)
 %repeat scan and fit
 data_on = scan_trims(limits,'2d',5,axis);
 
-fit_on = fit_plane_to_data(data_on,axis);
+fit_on = phase1_fit(data_on,axis);
 
 
 
